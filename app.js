@@ -1,11 +1,15 @@
 let = listaAmigos = []; // cria a lista
 // função para adiocionar o nome digitado pelo usuário à lista de amigos.
+
 function adicionarAmigo() {
     let nome = document.getElementById("amigo").value.trim();
     if (nome === "") {
         alert ('Por favor, insira um nome.');
         return;
     }
+    // Formatar: primeira letra maiúscula + resto minúsculo
+    nome = nome.charAt(0).toUpperCase() + nome.slice(1).toLowerCase();
+
     // verifica se o nome é repetido
     if (listaAmigos.includes(nome)) {
         alert('Este nome já foi adicionado!');
